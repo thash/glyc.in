@@ -22,3 +22,8 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 ```
 $ nvm use && npm install
 ```
+
+
+https://github.com/facebookincubator/create-react-app/blob/master/README.md#getting-started
+https://github.com/Hellenic/react-hexgrid
+http://www.redblobgames.com/grids/hexagons/
