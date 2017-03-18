@@ -17,3 +17,5 @@ erl_crash.dump
 
 # Node.js
 node_modules
+
+*.zip

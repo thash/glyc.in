@@ -1,3 +1,8 @@
+# How to build for production
+# add distillery https://github.com/bitwalker/distillery
+# (if first setup: $ mix release.init)
+# $ MIX_ENV=prod mix release --env=prod
+
 use Mix.Config
 
 # For production, we configure the host to read the PORT

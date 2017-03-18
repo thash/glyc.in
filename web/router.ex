@@ -1,3 +1,4 @@
+# examine ... $ mix phoenix.routes
 defmodule Elixirweb.Router do
   use Elixirweb.Web, :router
 
@@ -19,8 +20,12 @@ defmodule Elixirweb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Elixirweb do
-  #   pipe_through :api
-  # end
+  # TODO: set api pipeline for subdomain api.hoge.com/-/public/xxxx
+  scope "/_api", Elixirweb do
+    pipe_through :api
+    get "/", PageController, :index
+    # scope "/-", Elixirweb do
+    #   get "/", PageController, :index
+    # end
+  end
 end
