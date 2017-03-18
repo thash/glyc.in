@@ -1,0 +1,8 @@
+version: 0.1
+phases:
+  bulid:
+    commands:
+      - echo $CODEBUILD_SRC_DIR
+      - MIX_ENV=prod mix release --env=prod
+artifacts:
+  - _build/prod/rel/elixirweb/**/*
