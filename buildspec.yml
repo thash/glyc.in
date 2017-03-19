@@ -7,15 +7,23 @@ environment_variables:
 phases:
   install:
     commands:
-      - echo Installing...
       - ls -lrt
+      - echo Installing Elixir...
       - wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
       - apt-get update -y
-      - apt-get install -y esl-erlang
-      - apt-get install -y elixir
+      - apt-get install -y esl-erlang elixir
+      - echo Installing AWS CLI...
+      - apt-get install -y python3.4
+      - curl -O https://bootstrap.pypa.io/get-pip.py
+      - python3 get-pip.py --user
+      - pip --version
+      - pip install awscli --upgrade --user
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - echo Fetching Parameters...
+      - aws ssm get-parameters --names dbpassword --with-decryption
+      - aws ssm get-parameters --names dbpassword --with-decryption --query "Parameters[].Value[]" --output text
+      - export SECRET_KEY_BASE=$(aws ssm get-parameters --names dbpassword --with-decryption --query "Parameters[].Value[]" --output text)
   build:
     commands:
       - echo Build started on `date`
