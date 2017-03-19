@@ -24,6 +24,7 @@ defmodule Elixirweb.Router do
   scope "/_api", Elixirweb do
     pipe_through :api
     get "/", PageController, :index
+
     # scope "/-", Elixirweb do
     #   get "/", PageController, :index
     # end
