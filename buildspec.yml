@@ -41,3 +41,5 @@ phases:
 artifacts:
   files:
     - _build/prod/rel/elixirweb/**/*
+    - appspec.yml
+  discard-paths: yes
