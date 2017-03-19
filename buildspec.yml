@@ -21,9 +21,9 @@ phases:
   pre_build:
     commands:
       - echo Fetching Parameters...
-      - aws --region us-east-1 ssm get-parameters --names dbpassword --with-decryption
-      - aws --region us-east-1 ssm get-parameters --names dbpassword --with-decryption --query "Parameters[].Value[]" --output text
-      - export SECRET_KEY_BASE=$(aws --region us-east-1 ssm get-parameters --names dbpassword --with-decryption --query "Parameters[].Value[]" --output text)
+      - aws --region us-east-1 ssm get-parameters --names elixirapp-secret-key-base --with-decryption
+      - aws --region us-east-1 ssm get-parameters --names elixirapp-secret-key-base --with-decryption --query "Parameters[].Value[]" --output text
+      - export SECRET_KEY_BASE=$(aws --region us-east-1 ssm get-parameters --names elixirapp-secret-key-base --with-decryption --query "Parameters[].Value[]" --output text)
   build:
     commands:
       - echo Build started on `date`
