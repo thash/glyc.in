@@ -8,6 +8,7 @@ phases:
   install:
     commands:
       - ls -lrt
+      - update-locale LC_ALL=en_US.UTF-8
       - echo Installing Erlang, Elixir, and Hex...
       - wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
       - apt-get update -y
