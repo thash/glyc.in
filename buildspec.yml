@@ -8,16 +8,22 @@ phases:
   install:
     commands:
       - echo Installing...
+      - ls -lrt
+      - wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
+      - apt-get update -y
+      - apt-get install -y esl-erlang
+      - apt-get install -y elixir
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
+      - MIX_ENV=prod mix release --env=prod
   post_build:
     commands:
       - echo Build completed on `date`
       - ls -lrt
 artifacts:
   files:
-    - README.md
+    - _build/prod/rel/elixirweb/**/*
