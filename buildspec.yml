@@ -8,10 +8,11 @@ phases:
   install:
     commands:
       - ls -lrt
-      - echo Installing Elixir...
+      - echo Installing Erlang, Elixir, and Hex...
       - wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
       - apt-get update -y
       - apt-get install -y esl-erlang elixir
+      - mix local.hex
       - echo Installing AWS CLI...
       - apt-get install -y python3.4
       - curl -O https://bootstrap.pypa.io/get-pip.py
