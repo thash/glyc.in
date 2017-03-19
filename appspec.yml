@@ -3,4 +3,4 @@ os: linux
 hooks:
   AfterInstall:
     - location: codedeploy_scripts/phenix_server.sh
-      timeout: 180
+      timeout: 120
