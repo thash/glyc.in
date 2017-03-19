@@ -14,6 +14,7 @@ phases:
       - apt-get install -y esl-erlang elixir
       - mix --version
       - mix local.hex --force
+      - mix --force archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
       - echo Installing AWS CLI...
       - apt-get install -y python3.4
       - curl -O https://bootstrap.pypa.io/get-pip.py
