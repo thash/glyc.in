@@ -1,8 +1,25 @@
 version: 0.1
+
+environment_variables:
+  plaintext:
+    JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
+
 phases:
-  bulid:
+  install:
     commands:
-      - echo $CODEBUILD_SRC_DIR
-      - MIX_ENV=prod mix release --env=prod
+      - echo Installing...
+      - apt-get update -y
+      - apt-get install -y maven
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+  post_build:
+    commands:
+      - echo Build completed on `date`
 artifacts:
-  - _build/prod/rel/elixirweb/**/*
+  files:
+    - _build/prod/rel/elixirweb/**/*
+  discard-paths: yes
