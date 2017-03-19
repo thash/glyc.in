@@ -36,3 +36,4 @@ phases:
 artifacts:
   files:
     - _build/prod/rel/elixirweb/**/*
+  discard-paths: yes
