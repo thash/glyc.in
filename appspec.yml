@@ -1,6 +1,9 @@
 version: 0.0
 os: linux
 hooks:
+  BeforeInstall:
+    - location: codedeploy_scripts/install_phoenix.sh
+      timeout: 600
   AfterInstall:
-    - location: codedeploy_scripts/phenix_server.sh
-      timeout: 120
+    - location: codedeploy_scripts/phoenix_server.sh
+      timeout: 180
