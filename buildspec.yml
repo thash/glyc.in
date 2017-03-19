@@ -21,12 +21,13 @@ phases:
   pre_build:
     commands:
       - echo Fetching Parameters...
-      - aws ssm get-parameters --names dbpassword --with-decryption
-      - aws ssm get-parameters --names dbpassword --with-decryption --query "Parameters[].Value[]" --output text
-      - export SECRET_KEY_BASE=$(aws ssm get-parameters --names dbpassword --with-decryption --query "Parameters[].Value[]" --output text)
+      - aws --region us-east-1 ssm get-parameters --names dbpassword --with-decryption
+      - aws --region us-east-1 ssm get-parameters --names dbpassword --with-decryption --query "Parameters[].Value[]" --output text
+      - export SECRET_KEY_BASE=$(aws --region us-east-1 ssm get-parameters --names dbpassword --with-decryption --query "Parameters[].Value[]" --output text)
   build:
     commands:
       - echo Build started on `date`
+      - MIX_ENV=prod mix deps.get
       - MIX_ENV=prod mix release --env=prod
   post_build:
     commands:
