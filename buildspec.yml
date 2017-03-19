@@ -8,8 +8,6 @@ phases:
   install:
     commands:
       - echo Installing...
-      - apt-get update -y
-      - apt-get install -y maven
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
@@ -19,7 +17,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - ls -lrt
 artifacts:
   files:
-    - _build/prod/rel/elixirweb/**/*
-  discard-paths: yes
+    - README.md
