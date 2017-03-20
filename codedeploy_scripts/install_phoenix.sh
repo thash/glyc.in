@@ -16,7 +16,18 @@ export HOME=/root
 # rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 # # instaed of erlang, install esl-erlang, which includes the Erlang/OTP platform and all of its applications
 # yum install -y esl-erlang
-yum install -y esl-erlang --enablerepo=epel
+
+cat >> /etc/yum.repos.d/erlang-solutions.repo <<EOF
+[erlang-solutions]
+name=Centos \$releasever - \$basearch - Erlang Solutions
+baseurl=https://packages.erlang-solutions.com/rpm/centos/\$releasever/\$basearch
+gpgcheck=1
+gpgkey=https://packages.erlang-solutions.com/rpm/erlang_solutions.asc
+enabled=1
+EOF
+
+yum update -y
+yum install -y esl-erlang
 
 ### http://elixir-lang.org/install.html#compiling-from-source-unix-and-mingw
 curl -L -O https://github.com/elixir-lang/elixir/archive/v1.4.2.tar.gz
