@@ -41,7 +41,5 @@ phases:
 artifacts:
   files:
     - '*'
-    - 'deps/*'
-    - 'deps/**/*'
-    - '_build/*'
-    - '_build/**/*'
+    - '*/*'
+    - '*/**/*'
