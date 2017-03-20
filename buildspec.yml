@@ -40,4 +40,5 @@ phases:
       - ls -lrt
 artifacts:
   files:
+    - '*'
     - '*/**/*'
