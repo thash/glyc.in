@@ -4,6 +4,6 @@ hooks:
   BeforeInstall:
     - location: codedeploy_scripts/install_phoenix.sh
       timeout: 600
-  AfterInstall:
+  ApplicationStart:
     - location: codedeploy_scripts/phoenix_server.sh
       timeout: 180
