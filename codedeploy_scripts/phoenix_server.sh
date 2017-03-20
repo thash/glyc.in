@@ -19,4 +19,5 @@ mix local.hex --force
 mix local.rebar --force
 mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
 
-PORT=80 MIX_ENV=prod mix phoenix.server
+MIX_ENV=prod mix phoenix.digest
+PORT=80 MIX_ENV=prod elixir --detached -S mix phoenix.server
