@@ -28,6 +28,12 @@ EOF
 
 yum update -y
 yum install -y esl-erlang
+# エラー: パッケージ: esl-erlang-19.3-1.x86_64 (erlang-solutions)
+#              要求: libwx_gtk2u_core-2.8.so.0()(64bit)
+# ...
+# エラー: パッケージ: esl-erlang-19.3-1.x86_64 (erlang-solutions)
+#              要求: libwx_gtk2u_html-2.8.so.0()(64bit)
+
 
 ### http://elixir-lang.org/install.html#compiling-from-source-unix-and-mingw
 curl -L -O https://github.com/elixir-lang/elixir/archive/v1.4.2.tar.gz
