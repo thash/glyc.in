@@ -15,8 +15,8 @@ pwd
 # http://www.phoenixframework.org/docs/installation
 which mix
 mix --version
-mix --force local.hex
-mix --force local.rebar
+mix local.hex --force
+mix local.rebar --force
 mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
 
 PORT=80 MIX_ENV=prod mix phoenix.server
