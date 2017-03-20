@@ -6,4 +6,5 @@ pwd
 echo "ls ------------------\n"
 ls -lrt
 echo "phoenix.server ------------------\n"
+export HOME=/root
 PORT=4001 MIX_ENV=prod mix phoenix.server
