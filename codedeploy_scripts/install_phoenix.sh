@@ -6,6 +6,9 @@ pwd
 env
 echo 'check id/env <<<'
 
+# [stderr]erlexec: HOME must be set
+export HOME=/root
+
 ### Install Erlang and Elixir
 # http://elixir-lang.org/install.html#installing-erlang
 wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
