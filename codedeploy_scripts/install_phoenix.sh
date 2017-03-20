@@ -18,12 +18,12 @@ tar xzvf v1.4.2.tar.gz
 cd elixir-1.4.2
 # [stderr]erlexec: HOME must be set
 export HOME=/root
-make clean test
 make install
 
 # http://www.phoenixframework.org/docs/installation
 which mix
 mix --version
 mix --force local.hex
+mix --force local.rebar
 mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
 
