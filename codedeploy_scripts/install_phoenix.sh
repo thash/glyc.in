@@ -15,10 +15,9 @@ wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo 
 apt-get -y update
 apt-get -y install esl-erlang elixir
 
-# http://www.phoenixframework.org/docs/installation
-which mix
-mix --version
-mix --force local.hex
-mix --force local.rebar
-mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
-
+# # http://www.phoenixframework.org/docs/installation
+# which mix
+# mix --version
+# mix --force local.hex
+# mix --force local.rebar
+# mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
