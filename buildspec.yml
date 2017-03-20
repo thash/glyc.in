@@ -40,6 +40,4 @@ phases:
       - ls -lrt
 artifacts:
   files:
-    - _build/prod/rel/elixirweb/**/*
-    - codedeploy_scripts/*
-    - appspec.yml
+    - */**/*
